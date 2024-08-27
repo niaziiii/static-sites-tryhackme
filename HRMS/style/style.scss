@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&family=Ubuntu");
+
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+$color-main: #212c42;
+$color-secondary: #151c2b;
+$color-btn: #525a6a;
+$color-green-light: #a3ea2a;
+$color-red-light: #eb0037;
+
+body {
+  // background-color: $color-main;
+  min-height: 100vh;
+  color: #ececec;
+  font-family: "Source Sans Pro", "Ubuntu", sans-serif !important;
+}
+
+// wraper for header/body
+.wrapper {
+  // border: 1px solid #ececec;
+  background-color: $color-main;
+  min-height: 95vh;
+  border-radius: 10px;
+}
+
+// header style
+.offical-header {
+  background-color: $color-secondary;
+  padding: 1rem 0;
+  display: flex;
+  align-items: center;
+}
+
+.copy-container:hover #tooltip {
+  display: block !important;
+}
+
+#tooltip {
+  display: none;
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: opacity 0.3s;
+}
+
+#tooltip.show {
+  opacity: 1;
+}
+
+// default heading style
+.font-heading {
+  font-size: calc(1.325rem + 0.9vw);
+  font-weight: 500;
+  font-family: "Source Sans Pro", "Ubuntu", sans-serif !important;
+}
+
+.popup-offical {
+  z-index: 1000;
+  .popup-offical-container {
+    background-color: $color-secondary;
+  }
+}
+
+// // button styles & animation
+@import "./modules/btn";
+@import "./modules/animation";
+@import "./modules/tooltip";
+
+.active {
+  background-color: $color-green-light !important;
+}
+.active-text {
+  color: $color-green-light !important;
+}
+// hero-section
+.hero-section {
+  height: 50vh;
+  width: 100%;
+  display: flex;
+  position: relative;
+  &__bg {
+    height: 50vh;
+    width: 100%;
+  }
+}
+
+.move-div {
+  transition: 3s all !important;
+  // animation: move 2s infinite alternate;
+
+  position: absolute;
+  z-index: 1;
+  cursor: pointer;
+}
+.move-div:hover {
+  opacity: 1 !important;
+}
+
+.def-round-1 {
+  position: absolute;
+  left: 10%;
+  width: 40%;
+}
+.def-round-2 {
+  width: 80%;
+}
+.attack-round-1 {
+  width: 55%;
+  margin-left: auto;
+}
+.attack-round-2 {
+  width: 80%;
+}
+
+@keyframes move {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(50px, 50px);
+  }
+}
+
+// // responsivenss for small screens
+// @media screen and (max-width: 750px) {
+//   body {
+//     padding: 0% !important;
+//   }
+//   .wrapper {
+//     border: none;
+//   }
+//   .offical-header {
+//     padding: 0.5rem 0 !important;
+//     display: flex;
+//     justify-content: center;
+//     flex-direction: column;
+//     align-items: center;
+//     .image-container {
+//       position: relative;
+//       margin-bottom: 0.8rem;
+//     }
+//   }
+// }

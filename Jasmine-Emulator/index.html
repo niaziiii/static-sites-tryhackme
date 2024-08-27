@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="description"
+      content="TryHackMe is a free online platform for learning cyber security, using hands-on exercises and labs, all through your browser!"
+    />
+    <meta
+      name="og:description"
+      content="TryHackMe is a free online platform for learning cyber security, using hands-on exercises and labs, all through your browser!"
+    />
+    <meta
+      name="keywords"
+      content="cyber,security,cyber security,cyber security training,coding,computer,bitcoin,hacking,hackers,hacks,hack,exploits,keylogger,learn,poc"
+    />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+
+    <meta property="og:site_name" content="TryHackMe" />
+    <meta property="og:title" content="TryHackMe | Cyber Security Training" />
+    <meta
+      property="og:image"
+      content="https://tryhackme.com/img/meta/default.png"
+    />
+    <meta property="og:url" content="https://tryhackme.com" />
+    <meta
+      name="twitter:image"
+      content="https://tryhackme.com/img/meta/default.png"
+    />
+    <meta
+      property="og:description"
+      content="An online platform for learning and teaching cyber security, all through your browser."
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://assets.tryhackme.com/img/favicon.png"
+    />
+    <link rel="stylesheet" href="./style/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://kit.fontawesome.com/4f572bc49d.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.js.iife.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.css"
+    />
+
+    <title>TryHackMe | Assembly Emulator</title>
+  </head>
+  <body class="body" id="body">
+    <div class="flex flex-col overflow-hidden">
+      <!-- Header -->
+      <header class="offical-header">
+        <div class="image-container">
+          <img
+            src="https://assets.tryhackme.com/img/logo/tryhackme_logo_full.svg"
+            alt="image-logo"
+            class="w-full h-16"
+          />
+        </div>
+        <div class="header-content w-full text-center">
+          <h1 class="font-heading text-white">Assembly Emulator</h1>
+        </div>
+      </header>
+
+      <!-- main-content -->
+      <main class="w-full min-h-[80vh] flex flex-col flex-1 pb-4">
+        <div id="main-content" class="w-full flex-1 relative">
+          <!-- buttons/dropdown -->
+          <div
+            class="flex items-center justify-center gap-4 my-4 flex-col lg:flex-row"
+          >
+            <!-- Button controls -->
+            <div class="flex items-center justify-center">
+              <div
+                class="bg-white text-black justify-center px-4 py-1 flex gap-4 rounded"
+                id="controls-btns"
+              >
+                <button
+                  class="border-none outline-none text-[#a3ea2a] tooltip playController"
+                  data-tooltip="Run the program"
+                >
+                  <i class="fa-solid fa-play"></i>
+                </button>
+                <button
+                  class="border-none outline-none text-[#a3ea2a] tooltip stepOverController"
+                  data-tooltip="Execute the next instruction"
+                >
+                  <i class="fa-solid fa-forward"></i>
+                </button>
+
+                <button
+                  class="border-none outline-none text-[#1153E4] tooltip resetRepeatController"
+                  data-tooltip="Reset the memory and all registers"
+                >
+                  <i class="fa-solid fa-repeat"></i>
+                </button>
+              </div>
+            </div>
+
+            <select
+              id="select-code"
+              onchange="onChangeCode(event)"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            >
+              <option value="1" selected>Arithmetic Code</option>
+              <option value="2">Mov Instruction</option>
+              <option value="3">Stack</option>
+              <option value="4">Cmp and Test Instructions</option>
+              <option value="5">Lea Instruction</option>
+            </select>
+          </div>
+
+          <!-- content -->
+          <div class="flex justify-center gap-4 px-8 text-black flex-wrap">
+            <!-- instruction-section -->
+            <section
+              id="intro-section"
+              class="p-4 bg-white rounded border border-black w-full text-center md:text-start md:w-auto"
+            >
+              <h1 class="text-2xl font-bold text-center">Instructions</h1>
+              <div
+                class="instructions-list mt-4 min-w-[12rem] w-full xl:w-auto px-3 flex flex-col gap-4 justify-center transition"
+              >
+                <div class="flex items-center gap-4 pl-3">
+                  <div>
+                    <i class="fa-solid fa-right-long text-[#a3ea2a]"></i>
+                  </div>
+                  <p>mov eas,20h</p>
+                  <i class="fa-solid fa-circle-info text-[#151c2b]"></i>
+                </div>
+                <div class="flex items-center gap-4 pl-3">
+                  <p>mov eas,20h</p>
+                  <i class="fa-solid fa-circle-info text-[#151c2b]"></i>
+                </div>
+              </div>
+            </section>
+
+            <!-- Registers and flags-section -->
+            <section
+              id="register-section"
+              class="p-4 bg-white rounded border border-black min-w-[30rem] w-full md:w-auto"
+            >
+              <h1 class="text-2xl font-bold text-center">
+                Registers and Flags
+              </h1>
+
+              <div class="registersFlagContainer flex flex-col px-4">
+                <div class="input-lists">
+                  <div class="input-label">
+                    <label for="Eax">EAX</label>
+                    <input
+                      type="text"
+                      value="0x00000000"
+                      class="register-inputs"
+                      name="Eax"
+                      id="Eax"
+                      disabled
+                    />
+                  </div>
+
+                  <div class="input-label">
+                    <label for="Ebx">EBX</label>
+                    <input
+                      type="text"
+                      value="0x00000000"
+                      class="register-inputs"
+                      name="Ebx"
+                      id="Ebx"
+                      disabled
+                    />
+                  </div>
+                  <div class="input-label">
+                    <label for="Ecx">ECX</label>
+                    <input
+                      type="text"
+                      value="0x00000000"
+                      class="register-inputs"
+                      name="Ecx"
+                      id="Ecx"
+                      disabled
+                    />
+                  </div>
+                  <div class="input-label">
+                    <label for="Edx">EDX</label>
+                    <input
+                      type="text"
+                      value="0x00000000"
+                      class="register-inputs"
+                      name="Edx"
+                      id="Edx"
+                      disabled
+                    />
+                  </div>
+                  <div class="input-label">
+                    <label for="Esi">ESI</label>
+                    <input
+                      type="text"
+                      value="0x00000000"
+                      class="register-inputs"
+                      name="Esi"
+                      id="Esi"
+                      disabled
+                    />
+                  </div>
+                  <div class="input-label">
+                    <label for="Edi">EDI</label>
+                    <input
+                      type="text"
+                      value="0x00000000"
+                      class="register-inputs"
+                      name="Edi"
+                      id="Edi"
+                      disabled
+                    />
+                  </div>
+                  <div class="input-label">
+                    <label for="Esp">ESP</label>
+                    <input
+                      type="text"
+                      value="0x00001000"
+                      class="register-inputs"
+                      name="Esp"
+                      id="Esp"
+                      disabled
+                    />
+                  </div>
+                  <div class="input-label">
+                    <label for="Ebp">EBP</label>
+                    <input
+                      type="text"
+                      value="0x00001000"
+                      class="register-inputs"
+                      name="Ebp"
+                      id="Ebp"
+                      disabled
+                    />
+                  </div>
+                  <div class="input-label">
+                    <label for="Eip">EIP</label>
+                    <input
+                      type="text"
+                      value="0x00000000"
+                      class="register-inputs"
+                      name="Eip"
+                      id="Eip"
+                      disabled
+                    />
+                  </div>
+                </div>
+
+                <div class="check-Lists grid grid-cols-2 mt-4">
+                  <div class="check-lists-input-check">
+                    <input
+                      type="checkbox"
+                      class="text-[#525a6a] bg-gray-100 rounded focus:ring-[#525a6a] register-flags"
+                      name="Carry"
+                      id="Carry"
+                    />
+                    <label for="Carry">Carry</label>
+                  </div>
+                  <div class="check-lists-input-check">
+                    <input
+                      type="checkbox"
+                      class="text-[#525a6a] bg-gray-100 rounded focus:ring-[#525a6a] register-flags"
+                      name="Overflow"
+                      id="Overflow"
+                    />
+                    <label for="Overflow">Overflow</label>
+                  </div>
+                  <div class="check-lists-input-check">
+                    <input
+                      type="checkbox"
+                      class="text-[#525a6a] bg-gray-100 rounded focus:ring-[#525a6a] register-flags"
+                      name="Sign"
+                      id="Sign"
+                    />
+                    <label for="Sign">Sign</label>
+                  </div>
+                  <div class="check-lists-input-check">
+                    <input
+                      type="checkbox"
+                      class="text-[#525a6a] bg-gray-100 rounded focus:ring-[#525a6a] register-flags"
+                      name="Zero"
+                      id="Zero"
+                    />
+                    <label for="Zero">Zero</label>
+                  </div>
+                  <div class="check-lists-input-check">
+                    <input
+                      type="checkbox"
+                      class="text-[#525a6a] bg-gray-100 rounded focus:ring-[#525a6a] register-flags"
+                      name="Parity"
+                      id="Parity"
+                    />
+                    <label for="Parity">Parity</label>
+                  </div>
+
+                  <div class="check-lists-input-check">
+                    <input
+                      type="checkbox"
+                      class="text-[#525a6a] bg-gray-100 rounded focus:ring-[#525a6a] register-flags"
+                      name="Auxiliary"
+                      id="Auxiliary"
+                    />
+                    <label for="Auxiliary">Auxiliary</label>
+                  </div>
+                  <div class="check-lists-input-check">
+                    <input
+                      type="checkbox"
+                      class="text-[#525a6a] bg-gray-100 rounded focus:ring-[#525a6a] register-flags"
+                      name="Trap"
+                      id="Trap"
+                    />
+                    <label for="Trap">Trap</label>
+                  </div>
+                  <div class="check-lists-input-check">
+                    <input
+                      type="checkbox"
+                      class="text-[#525a6a] bg-gray-100 rounded focus:ring-[#525a6a] register-flags"
+                      name="Direction"
+                      id="Direction"
+                    />
+                    <label for="Direction">Direction</label>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- memory section -->
+            <section
+              id="memory-section"
+              class="py-2 px-4 bg-white rounded border w-full md:w-auto"
+            >
+              <h1 class="text-2xl font-bold text-center mb-3">
+                Memory Placeholder
+              </h1>
+
+              <div class="relative">
+                <table class="w-full text-sm text-left">
+                  <thead class="text-xs uppercase bg-[#151c2b] text-white">
+                    <tr>
+                      <th class="px-6 py-3">Address</th>
+                      <th class="px-6 py-3">Signed int</th>
+                      <th class="px-6 py-3">unsigned int</th>
+                      <th class="px-6 py-3">hex</th>
+                    </tr>
+                  </thead>
+                  <tbody class="table-body" id="memory-table"></tbody>
+                </table>
+              </div>
+            </section>
+
+            <!-- Stack section -->
+            <section
+              id="stack-section"
+              class="p-4 bg-white rounded border border-black w-full text-center md:text-start md:w-auto"
+            >
+              <h1 class="text-2xl font-bold text-center">Stack</h1>
+              <div class="flex text-center">
+                <p class="w-[80px]">Address</p>
+                <p class="grow">HEX</p>
+              </div>
+              <div id="stack" class="stack font-bold"></div>
+            </section>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- ///////////// -->
+    <!-- Modals -->
+    <!-- ///////////// -->
+
+    <!-- instruction model modal -->
+    <div
+      id="instructions-modal"
+      tabindex="-1"
+      aria-hidden="true"
+      class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full"
+    >
+      <div class="relative w-full max-w-2xl max-h-full">
+        <!-- Modal content -->
+        <div class="relative bg-[#151c2b] rounded-lg shadow border">
+          <!-- Modal header -->
+          <div class="flex justify-between p-4 border-b">
+            <h3 class="text-xl font-bold">Instructions</h3>
+            <button
+              type="button"
+              class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
+              data-modal-hide="instructions-modal"
+            >
+              <svg
+                aria-hidden="true"
+                class="w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              <span class="sr-only">Close modal</span>
+            </button>
+          </div>
+          <!-- Modal body -->
+          <div class="p-6 space-y-2 text-white">
+            <span class="flex">
+              <b class="min-w-[8rem] w-32">Command:</b>
+              <p id="command">MOV-Move</p>
+            </span>
+            <span class="flex">
+              <b class="min-w-[8rem] w-32">Arguments:</b>
+              <p id="arguments">
+                DEST: general-purpose register, segment register or memory
+                location; SRC: immediate value, general-purpose register,
+                segment register or memory location
+              </p>
+            </span>
+            <span class="flex">
+              <b class="min-w-[8rem] w-32">Usage:</b>
+              <p id="usage">MOV DEST,SRC</p>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <i
+      id="secret-btn"
+      class="hidden"
+      data-modal-toggle="instructions-modal"
+      data-modal-target="instructions-modal"
+    ></i>
+
+    <i
+      id="error-trigger-btn"
+      class="hidden"
+      data-modal-toggle="errors-modal"
+      data-modal-target="errors-modal"
+    ></i>
+
+    <div
+      id="errors-modal"
+      tabindex="-1"
+      aria-hidden="true"
+      class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full"
+    >
+      <div class="relative w-full max-w-2xl max-h-full">
+        <!-- Modal content -->
+        <div class="relative bg-[#151c2b] rounded-lg shadow border">
+          <!-- Modal header -->
+          <div class="flex justify-between p-4 border-b">
+            <h3 class="text-xl font-bold">Error</h3>
+            <button
+              type="button"
+              class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
+              data-modal-hide="errors-modal"
+            >
+              <svg
+                aria-hidden="true"
+                class="w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              <span class="sr-only">Close modal</span>
+            </button>
+          </div>
+          <!-- Modal body -->
+          <div class="p-6 space-y-2 text-white">
+            <p id="error-text"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./index.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+  </body>
+</html>

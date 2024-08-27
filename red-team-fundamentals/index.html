@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>TryHackMe | A Simple Red Team Engagement</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="style.css?v=0.2" />
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/4f572bc49d.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://assets.tryhackme.com/img/favicon.png"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="body">
+    <header class="offical-header px-10 py-3 text-white">
+      <div class="image-container">
+        <img
+          src="https://assets.tryhackme.com/img/logo/tryhackme_logo_full.svg"
+          alt="image-logo"
+          class="w-full h-16"
+        />
+      </div>
+
+      <div class="header-content w-full text-center">
+        <div class="progress-bar">
+          <div
+            style="
+              display: flex;
+              height: 100%;
+              align-items: center;
+              padding-left: 20px;
+            "
+            class="justify-center text-center"
+          >
+            <div class="flex flex-col justify-center items-center gap-1">
+              <div class="progress-bar-title text-2xl">Red Team Engagement</div>
+              <div class="progress-bar-dots">
+                <div
+                  data-tooltip="Planning the Engagement"
+                  class="tooltip"
+                  id="progress-1"
+                ></div>
+                <div
+                  data-tooltip="Intelligence Gathering"
+                  class="tooltip"
+                  id="progress-2"
+                ></div>
+                <div
+                  data-tooltip="Emulating TTP: Phishing campaign"
+                  class="tooltip"
+                  id="progress-3"
+                ></div>
+                <div
+                  data-tooltip="Emulating TTP: Privilege Escalation and Persistence"
+                  class="tooltip"
+                  id="progress-4"
+                ></div>
+                <div
+                  data-tooltip="Emulating TTP: Lateral Movement"
+                  class="tooltip"
+                  id="progress-5"
+                ></div>
+                <div
+                  data-tooltip="Reporting and Analysis"
+                  class="tooltip"
+                  id="progress-6"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="mainContainer">
+      <div id="level1" class="mt-10">
+        <div class="introductions">
+          <div class="instructions-header">1. Planning the Engagement</div>
+          <img src="imgs/comic2-1.png" width="100%" />
+          <div class="instructions-body">
+            <p>
+              White and red teams will define goals that align with the
+              business' risk scenarios.
+            </p>
+            <p>
+              Blue team is usually not informed at this stage about the
+              excercise, as we want to analyze their natural response against an
+              attacker.
+            </p>
+          </div>
+        </div>
+        <div class="flex justify-center items-center m-auto mt-4 max-w-[660px]">
+          <button class="thm_button btn_level1">Next</button>
+        </div>
+      </div>
+      <div id="level2" class="mt-10" style="display: none">
+        <div class="introductions">
+          <div class="instructions-header">2. Intelligence Gathering</div>
+          <img src="imgs/comic2-2.png" width="100%" />
+          <div class="instructions-body">
+            <p>
+              The red team gathers as much information as they can about the
+              bank, including:
+            </p>
+            <ul>
+              <li class="flex items-center gap-2">
+                <p class="w-2 h-2 rounded-full bg-black"></p>
+                Technologies in use
+              </li>
+              <li class="flex items-center gap-2">
+                <p class="w-2 h-2 rounded-full bg-black"></p>
+                List of employees
+              </li>
+              <li class="flex items-center gap-2">
+                <p class="w-2 h-2 rounded-full bg-black"></p>
+                Information on social media
+              </li>
+              <li class="flex items-center gap-2">
+                <p class="w-2 h-2 rounded-full bg-black"></p>
+                Photos
+              </li>
+              <li class="flex items-center gap-2">
+                <p class="w-2 h-2 rounded-full bg-black"></p>
+                Any other usable information...
+              </li>
+            </ul>
+            <p>
+              <b>Threat intelligence</b> sources are also used to check for APTs
+              targeting similar companies to get a better grasp of the TTPs and
+              tools they use. As an example, you can check
+              <a
+                href="https://attack.mitre.org/groups/G0008/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Carbanak's information</a
+              >.
+            </p>
+            <p>
+              With all the information at hand, the red team will create a plan
+              that includes several TTPs that fit the target and get it approved
+              by the white team.
+            </p>
+          </div>
+        </div>
+        <div class="flex justify-center items-center m-auto mt-4 max-w-[660px]">
+          <button class="thm_button btn_level2">Next</button>
+        </div>
+      </div>
+      <div id="level3" class="mt-10" style="display: none">
+        <div class="introductions">
+          <div class="instructions-header">
+            3. Emulating TTP: Phishing campaign
+          </div>
+          <img src="imgs/comic2-3.png" width="100%" />
+          <div class="instructions-body">
+            <p>
+              The red team starts the engagement by emulating a phishing
+              campaign against a list of emails they made, based on employees'
+              names found on LinkedIn and a detected pattern in their email
+              addresses.
+            </p>
+            <ul>
+              <li>julie.smith@bank.example.com</li>
+              <li>john.watson@bank.example.com</li>
+            </ul>
+            <p>
+              The phishing campaign was detected. The blue team sent an email to
+              all employees to warn them of the ongoing threat. This still
+              allowed the attack to carry on, as there was no process in place
+              to check for possibly infected PCs or even delete any copies of
+              the malicious email from all users' inboxes.
+            </p>
+
+            <div class="browser">
+              <div class="browser-header">
+                <div class="browser-buttons">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </div>
+                <div class="browser-address-bar" style="color: #b5b5b5">
+                  https://email.bank.example.com/user/inbox
+                </div>
+              </div>
+              <div class="browser-body" id="scope-email">
+                <div id="email-header">
+                  <div class="email-btn">
+                    <i class="fas fa-envelope-open-text"></i>
+                  </div>
+                  <div class="email-btn"><i class="fas fa-reply"></i></div>
+                  <div class="email-btn"><i class="fas fa-reply-all"></i></div>
+                </div>
+                <div id="email-grid">
+                  <div id="email-folders">
+                    <div class="email-header">Folders</div>
+                    <div class="email-folder-main">
+                      <b><i class="fas fa-inbox-in"></i> Inbox (22)</b>
+                    </div>
+                    <div class="email-folder-sub">
+                      <i class="fas fa-folder"></i> HR
+                    </div>
+                    <div class="email-folder-sub">
+                      <i class="fas fa-folder"></i> Invoices
+                    </div>
+                    <div class="email-folder-sub">
+                      <i class="fas fa-folder"></i> Holiday
+                    </div>
+                    <div class="email-folder-sub">
+                      <i class="fas fa-folder"></i> Private
+                    </div>
+
+                    <div class="email-folder-main">
+                      <i class="fas fa-pen"></i> Drafts
+                    </div>
+                    <div class="email-folder-main">
+                      <i class="fas fa-paper-plane"></i> Sent
+                    </div>
+                    <div class="email-folder-main">
+                      <i class="fas fa-trash"></i> Trash
+                    </div>
+                  </div>
+                  <div id="email-messages">
+                    <div class="email-header">Messages</div>
+                    <div
+                      id="email-summary-1"
+                      class="email-summary active"
+                      onclick="openEmail(1)"
+                    >
+                      <div class="email-summary-read read">
+                        <i class="fas fa-circle"></i>
+                      </div>
+                      <div>
+                        <div class="email-summary-from">Blue Team</div>
+                        <div class="email-summary-subject">Phishing alert!</div>
+                        <div class="email-summary-time">Fri 16:08</div>
+                      </div>
+                    </div>
+                    <div
+                      id="email-summary-2"
+                      class="email-summary"
+                      onclick="openEmail(2)"
+                    >
+                      <div class="email-summary-read">
+                        <i class="fas fa-circle"></i>
+                      </div>
+                      <div>
+                        <div class="email-summary-from">Ben Savani</div>
+                        <div class="email-summary-subject">
+                          Cyber Security Training
+                        </div>
+                        <div class="email-summary-time">Fri 13:32</div>
+                      </div>
+                    </div>
+                    <div
+                      id="email-summary-3"
+                      class="email-summary"
+                      onclick="openEmail(3)"
+                    >
+                      <div class="email-summary-read read">
+                        <i class="fas fa-circle"></i>
+                      </div>
+                      <div>
+                        <div class="email-summary-from">IT Dept</div>
+                        <div class="email-summary-subject">
+                          Account Suspended!!!
+                        </div>
+                        <div class="email-summary-time">Fri 11:08</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="email-body">
+                    <div class="email-header">Viewing</div>
+                    <div id="email-body-main-1" class="email-body-main">
+                      <p class="w-full"><b>Phishing alert!</b></p>
+                      <p class="mb-2 w-full">
+                        From: Blue Team &lt;bt@bank.example.com&gt;
+                      </p>
+                      <hr />
+                      <p class="mt-2">
+                        To all employees, <br />
+                        please avoid opening any email with subject "Account
+                        Suspended!!!", as it is part of an ongoing phishing
+                        scam. <br /><br />
+                        Remember that we won't ever ask you for your credentials
+                        via email.
+                      </p>
+                    </div>
+                    <div
+                      id="email-body-main-2"
+                      class="email-body-main"
+                      style="display: none"
+                    >
+                      <p class="w-full">
+                        <b>Cyber Security Training</b>
+                      </p>
+                      <div class="w-full mb-2">
+                        From: Ben Savani &lt;ben@bank.example.com&gt;
+                      </div>
+                      <hr />
+                      <p class="mt-2">
+                        Hello all,<br /><br />
+                        Remember to attend the cyber security training on monday
+                        at 10h00. See you there!<br /><br />
+                        Ben
+                      </p>
+                    </div>
+                    <div
+                      id="email-body-main-3"
+                      class="email-body-main"
+                      style="display: none"
+                    >
+                      <div class="w-full">
+                        <b>Account Suspended!!!</b>
+                      </div>
+                      <div class="w-full mb-2">
+                        From: HR &lt;hr@bankk.example.com&gt;
+                      </div>
+                      <hr />
+                      <p class="mb-0">
+                        you're account is being suspended due to compromised
+                        password... TO avoid suspension please login to the
+                        following link ASAP:
+                        <br /><br />
+                        http://hr.bankk.example.com
+                        <br /><br />
+                        HR Dept.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex justify-center items-center m-auto mt-4 !mb-6 max-w-[660px]"
+        >
+          <button class="thm_button btn_level3">Next</button>
+        </div>
+      </div>
+      <div id="level4" class="mt-10" style="display: none">
+        <div class="introductions">
+          <div class="instructions-header">
+            4. Emulating TTP: Privilege Escalation and Persistence
+          </div>
+          <img src="imgs/comic2-4.png" width="100%" />
+          <div class="instructions-body">
+            <p>
+              The red team found missing Windows patches on BOB-PC. One of them
+              allowed for
+              <a
+                href="https://0xdf.gitlab.io/2021/07/08/playing-with-printnightmare.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                >PrintNightmare</a
+              >
+              exploitation.
+            </p>
+            <p>
+              While the available public exploit was detected by many AV
+              solutions, some AV evasion techniques were successfuly applied to
+              avoid triggering any alarms, obtaining SYSTEM privileges.
+            </p>
+            <p>
+              The red team was able to upload and run a modified mimikatz to
+              extract local password hashes, including the local administrator
+              account "Backups".
+            </p>
+
+            <div class="console">
+              <div class="console-header">
+                <span class="console-button"></span>
+                <span class="console-button"></span>
+                <span class="console-button"></span>
+              </div>
+              <div id="console-body" style="height: 410px">
+                <span id="console-results"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex justify-center items-center m-auto mt-4 !mb-6 max-w-[660px]"
+        >
+          <button class="thm_button btn_level4">Next</button>
+        </div>
+      </div>
+      <div id="level5" class="mt-10" style="display: none">
+        <div class="introductions">
+          <div class="instructions-header">
+            5. Emulating TTP: Lateral Movement
+          </div>
+          <img src="imgs/comic2-5.png" width="100%" />
+          <div class="instructions-body">
+            <p>
+              The red team used a Pass-the-Hash attack against all hosts on the
+              network to check if the "Backups" user could login to other hosts.
+              No direct connection could be made to the DB server, as firewall
+              policies were in place to prevent it.
+            </p>
+            <p>
+              After doing some additional recon, a workstation called DBA-PC was
+              identified. Using Pass-the-Hash, DBA-PC was compomised and used as
+              a pivot to connect to the DB server.
+            </p>
+            <p>
+              While the Pass-the-Hash attempts triggered many alerts on login
+              attempts from the user "Backups", the blue team ignored them as
+              they were confused with a batch backups process which runs
+              monthly.
+            </p>
+          </div>
+        </div>
+        <div class="flex justify-center items-center m-auto mt-4 max-w-[660px]">
+          <button class="thm_button btn_level5">Next</button>
+        </div>
+      </div>
+      <div id="level6" class="mt-10" style="display: none">
+        <div class="introductions">
+          <div class="instructions-header">6. Reporting and Analysis</div>
+          <img src="imgs/comic2-6.png" width="100%" />
+          <div class="instructions-body">
+            <p>
+              After finishing with the excercise, red, white and blue teams will
+              meet and discuss about how to improve the security of the bank.
+            </p>
+            <p>
+              Although we are focusing on the specific TTPs that allowed the red
+              team to reach its objective, in a real-life engagement, you will
+              usually have failed attempts as well. It is important to note that
+              those "failed" attempts can still provide valid information for
+              the exercise. Suppose, for example, that you ran some brute force
+              attacks against the DB server and never got any valid credentials
+              from it. It might still be interesting to check if the Blue Team
+              detected the attack at the end of the engagement.
+            </p>
+            <p>
+              Also, remember that many things might take unexpected turns during
+              the engagement. Maintaining clear communication between the red
+              and white teams is vital to make decisions that will direct the
+              exercise in the right course and avoid conflicts at the end of the
+              road.
+            </p>
+            <br />
+            <hr />
+            <br />
+
+            <div
+              class="mb-0 mt-2 alert-primary-1 w-full"
+              style="background-color: #719cf9 !important"
+            >
+              <div class="flex items-center justify-between">
+                <span id="obfuscated-flag-placeholder"></span>
+                <div class="copy-container relative">
+                  <button
+                    id="copy-btn"
+                    class="cursor-pointer border-none outline-none copy-btn"
+                  >
+                    <i class="fa-solid fa-copy"></i>
+                  </button>
+                  <div id="tooltip" class="copy-tooltip">Copy</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="script.js?v=0.1"></script>
+    <script>
+      setup();
+    </script>
+  </body>
+</html>

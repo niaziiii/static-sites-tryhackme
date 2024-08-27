@@ -1,0 +1,69 @@
+.quiz-btn {
+   button,
+   input[type="submit"] {
+      cursor: pointer;
+      margin: auto;
+      padding: 0.3rem 1.2rem;
+      transition: 0.3s all ease-in-out;
+      border-radius: 10px;
+      font-weight: 400;
+      border: none;
+      color: #a3ea2a;
+
+      font-size: 1.2rem;
+      font-family: "Source Sans Pro", "Ubuntu", sans-serif !important;
+      border: 1px solid $color-green-light;
+      outline: none;
+      &:hover {
+        background-color: #1c2538;
+     }
+      &:active {
+         background-color: $color-green-light;
+         outline: none;
+         color: #ececec;
+      }
+
+      &:last-child {
+         color: #eb0037;
+         border: 1px solid $color-red-light;
+         &:active {
+            background-color: $color-red-light !important;
+            color: #ececec;
+            outline: none;
+         }
+
+         &:hover {
+            background-color: #1c2538;
+         }
+      }
+   }
+}
+
+.btn-container {
+   width: 100%;
+   text-align: center;
+   button,
+   input[type="submit"] {
+      cursor: pointer;
+      background-color: $color-btn;
+      width: 100%;
+      margin: auto;
+      // padding: 0.5rem 0;
+      height: 3rem;
+      transition: 0.3s all ease-in-out;
+      border-radius: 10px;
+      font-weight: 400;
+      border: none;
+      color: #ececec;
+      font-size: 1.2rem;
+      font-family: "Source Sans Pro", "Ubuntu", sans-serif !important;
+
+      &:hover {
+         background-color: #212c42;
+         border: 1px solid #ececec;
+      }
+      &:active {
+         outline: none;
+      }
+   }
+}

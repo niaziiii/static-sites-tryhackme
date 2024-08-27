@@ -1,0 +1,55 @@
+// slide botoom animation
+
+.scale-up-center {
+  animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+@-webkit-keyframes scale-up-center {
+  0% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes scale-up-center {
+  0% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+// typing animation
+$slider-name: typing-slider;
+$typing-duration: 4s;
+
+@keyframes typing {
+  from {
+    width: 100%;
+  }
+  90%,
+  to {
+    width: 0;
+  }
+}
+
+.#{$slider-name} {
+  position: relative;
+}
+
+.#{$slider-name} li {
+  animation: slide $typing-duration;
+}
+
+.#{$slider-name} li::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $color-main;
+
+  animation: typing $typing-duration, cursor $typing-duration;
+}

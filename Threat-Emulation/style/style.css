@@ -1,0 +1,231 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&family=Ubuntu");
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #212c42;
+  min-height: 100vh;
+  color: #ececec;
+  font-family: "Source Sans Pro", "Ubuntu", sans-serif !important;
+}
+
+.wrapper {
+  background-color: #212c42;
+  min-height: 95vh;
+  border-radius: 10px;
+}
+
+.offical-header {
+  background-color: #151c2b;
+  padding: 1rem 0;
+}
+
+.copy-container:hover #tooltip {
+  display: block !important;
+}
+
+#tooltip {
+  display: none;
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: opacity 0.3s;
+}
+
+#tooltip.show {
+  opacity: 1;
+}
+
+.font-heading {
+  font-size: calc(1.325rem + 0.9vw);
+  font-weight: 500;
+  font-family: "Source Sans Pro", "Ubuntu", sans-serif !important;
+}
+
+.popup-offical {
+  z-index: 1000;
+}
+.popup-offical .popup-offical-container {
+  background-color: #151c2b;
+}
+
+.btn-container {
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+.btn-container button,
+.btn-container input[type=submit] {
+  cursor: pointer;
+  background-color: #525a6a;
+  width: 50%;
+  margin: auto;
+  padding: 0.5rem 0;
+  transition: 0.3s all ease-in-out;
+  border-radius: 10px;
+  font-weight: 400;
+  border: none;
+  color: #ececec;
+  font-size: 1.2rem;
+  font-family: "Source Sans Pro", "Ubuntu", sans-serif !important;
+}
+.btn-container button:hover,
+.btn-container input[type=submit]:hover {
+  background-color: #212c42;
+  border: 1px solid #ececec;
+}
+.btn-container button:active,
+.btn-container input[type=submit]:active {
+  outline: none;
+}
+
+.btn-container-2 {
+  text-align: center;
+}
+.btn-container-2 button,
+.btn-container-2 input[type=submit] {
+  cursor: pointer;
+  background-color: #525a6a;
+  width: 100%;
+  padding: 0.5rem 0;
+  transition: 0.3s all ease-in-out;
+  border-radius: 5px;
+  font-weight: 400;
+  border: none;
+  color: #ececec;
+  font-size: 1.2rem;
+  font-family: "Source Sans Pro", "Ubuntu", sans-serif !important;
+}
+.btn-container-2 button:hover,
+.btn-container-2 input[type=submit]:hover {
+  background-color: #212c42;
+  outline: 1px solid #ececec;
+  border: none;
+}
+.btn-container-2 button:active,
+.btn-container-2 input[type=submit]:active {
+  border: none;
+}
+
+@media screen and (max-width: 750px) {
+  .btn-container button,
+  .btn-container input[type=submit] {
+    width: 80%;
+  }
+}
+.slide-bottom {
+  animation: slide-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes slide-bottom {
+  0% {
+    transform: translateY(-100px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+@keyframes typing {
+  from {
+    width: 100%;
+  }
+  90%, to {
+    width: 0;
+  }
+}
+.typing-slider {
+  position: relative;
+}
+
+.typing-slider li {
+  animation: slide 4s;
+}
+
+.typing-slider li::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #212c42;
+  animation: typing 4s, cursor 4s;
+}
+
+.hero-section {
+  height: 50vh;
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+.hero-section__bg {
+  height: 50vh;
+  width: 100%;
+}
+
+.move-div {
+  transition: 3s all !important;
+  position: absolute;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.move-div:hover {
+  opacity: 1 !important;
+}
+
+.def-round-1 {
+  position: absolute;
+  left: 10%;
+  width: 40%;
+}
+
+.def-round-2 {
+  width: 80%;
+}
+
+.attack-round-1 {
+  width: 55%;
+  margin-left: auto;
+}
+
+.attack-round-2 {
+  width: 80%;
+}
+
+@keyframes move {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(50px, 50px);
+  }
+}
+@media screen and (max-width: 750px) {
+  body {
+    padding: 0% !important;
+  }
+  .wrapper {
+    border: none;
+  }
+  .offical-header {
+    padding: 0.5rem 0 !important;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  .offical-header .image-container {
+    position: relative;
+    margin-bottom: 0.8rem;
+  }
+}/*# sourceMappingURL=style.css.map */

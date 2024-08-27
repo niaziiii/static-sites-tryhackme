@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>
+      TryHackMe | A Day In the Life of a Junior (Associate) Security Analyst
+    </title>
+    <link rel="stylesheet" href="style.css?v=1.2" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.12.0/css/all.css"
+      integrity="sha384-ekOryaXPbeCpWQNxMwSWVvQ0+1VrStoPJq54shlYhR8HzQgig1v5fas6YgOqLoKz"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://assets.tryhackme.com/img/favicon.png"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/4f572bc49d.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body class="body">
+    <!-- Header -->
+    <header class="offical-header px-10 py-3">
+      <div class="image-container">
+        <img
+          src="https://assets.tryhackme.com/img/logo/tryhackme_logo_full.svg"
+          alt="image-logo"
+          class="w-full h-16"
+        />
+      </div>
+
+      <div class="header-content w-full text-center">
+        <div class="progress-bar">
+          <div
+            style="
+              display: flex;
+              height: 100%;
+              align-items: center;
+              padding-left: 20px;
+            "
+            class="justify-center"
+          >
+            <div>
+              <div class="progress-bar-title text-xl font-bold">
+                A Day In the Life of a Junior (Associate) Security Analyst
+              </div>
+              <div class="progress-bar-dots flex justify-center gap-2">
+                <div class="progress" id="progress-1"></div>
+                <div class="progress" id="progress-2"></div>
+                <div class="progress" id="progress-3"></div>
+                <div class="progress" id="progress-4"></div>
+                <div class="progress" id="progress-5"></div>
+                <div class="progress" id="progress-6"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div id="content" class="mainContainer">
+      <div id="level1">
+        <div class="browser">
+          <div class="browser-header">
+            <div class="browser-buttons">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <div class="browser-address-bar">https://siem.internal</div>
+          </div>
+          <div class="browser-body">
+            <div class="charts">
+              <div class="pie_area">
+                <div id="piechart"></div>
+              </div>
+              <div class="table_area">
+                <div id="chart"></div>
+              </div>
+            </div>
+            <div class="panel">
+              <div class="panel-heading">Alert Log</div>
+              <div class="panel-body">
+                <table
+                  class="event-log highlight"
+                  cellspacing="0"
+                  cellpadding="0"
+                >
+                  <tr>
+                    <th style="width: 160px">Date</th>
+                    <th>Message</th>
+                  </tr>
+                  <tr>
+                    <td>April 16th 2024, 05:27:00:347</td>
+                    <td>
+                      Successful SSH authentication attempt to port 22 from IP
+                      address 221.181.185.159
+                    </td>
+                  </tr>
+                  <tr class="ip_clicked">
+                    <td>April 16th 2024, 05:25:28:235</td>
+                    <td>
+                      Unauthorized connection attempt detected from IP address
+                      221.181.185.159 to port 22
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>April 16th 2024, 02:43:22:456</td>
+                    <td>
+                      The user John Doe logged in successfully (Event ID 4624)
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>April 16th 2024, 02:43:20:658</td>
+                    <td>Multiple failed login attempts from John Doe</td>
+                  </tr>
+                  <tr>
+                    <td>April 16th 2024, 02:30:20:215</td>
+                    <td>
+                      Logon Failure: Specified Account's Password Has Expired
+                      (Event ID 535)
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="level2" style="display: none">
+        <div class="browser">
+          <div class="browser-header">
+            <div class="browser-buttons">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <div class="browser-address-bar">https://ip-scanner.thm</div>
+          </div>
+          <div class="browser-body" style="text-align: center">
+            <div class="flex items-center justify-center">
+              <img src="images/ipscanner-logo.png" height="80" />
+            </div>
+            <h2>IP-SCANNER.THM</h2>
+            <div>Check by IP Address</div>
+            <div class="flex flex-col w-1/2 m-auto mt-6 mb-4 gap-2">
+              <input
+                class="thm_input"
+                id="search_ip_input"
+                placeholder="Enter IP Address"
+              />
+            </div>
+          </div>
+          <div class="w-full m-auto flex items-center justify-center mt-4">
+            <button class="thm_button search_ip">Submit</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="level3" style="display: none">
+        <div class="browser">
+          <div class="browser-header">
+            <div class="browser-buttons">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <div class="browser-address-bar">https://ip-scanner.thm/search</div>
+          </div>
+          <div class="browser-body" style="text-align: center">
+            <div class="flex justify-center items-center">
+              <img src="images/ipscanner-logo.png" height="80" />
+            </div>
+            <h2>IP-SCANNER.THM</h2>
+            <div class="ip-results">
+              <div class="ip_found">
+                <strong>221.181.185.159</strong> was found in our database!
+              </div>
+              <div>Confidence of the IP being malicious is 100%</div>
+              <div class="warning-header">Malicious</div>
+              <div>
+                <table class="ip">
+                  <tr>
+                    <td class="font-bold">ISP</td>
+                    <td>China Mobile Communications Corporation</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold">Domain Name</td>
+                    <td>chinamobileltd.thm</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold">Country</td>
+                    <td>China</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold">City</td>
+                    <td>Zhenjiang, Jiangsu</td>
+                  </tr>
+                </table>
+              </div>
+              <!-- <br -->
+            </div>
+          </div>
+        </div>
+        <div class="mt-6 mb-3 flex items-center justify-center">
+          <button class="thm_button escalate">Next</button>
+        </div>
+      </div>
+
+      <div id="level4" style="display: none">
+        <div class="introductions">
+          <div class="instructions-body">
+            <div
+              style="text-align: center; margin-top: 15px; font-weight: bold"
+            >
+              Choose to whom you would escalate this event?
+            </div>
+
+            <div class="staff_holder">
+              <div class="staff_member">
+                <div>
+              
+                  <input type="radio" name="staff_member" value="1" id="staff_member_1">
+                  <label for="staff_member_1">
+                     <div>Dominick Nash</div>
+                  <div
+                    class="staff_pic"
+                    style="background-image: url('images/person_1.png')"
+                  ></div>
+                  </label>
+                 
+              </input>
+                </div>
+
+                <div class="staff_position">
+                  <strong>Sales Executive</strong>
+                </div>
+              </div>
+
+              <div class="staff_member">
+                <div><input type="radio" name="staff_member" value="2" id="staff_member_2" /></div>
+                  <label for="staff_member_2">
+                <div>Nadia Watson</div>
+                <div
+                  class="staff_pic"
+                  style="
+                    background-image: url('images/person_2.png');
+                    background-position: 50% 0px;
+                  "
+                ></div>
+                </label>
+                <div class="staff_position">
+                  <strong>Security Consultant</strong>
+                </div>
+              </div>
+
+              <div class="staff_member">
+                <div><input type="radio" name="staff_member" value="3" id="staff_member_3"  /></div>
+                <label for="staff_member_3">
+                   <div>Carolyn Stone</div>
+                <div
+                  class="staff_pic"
+                  style="background-image: url('images/person_3.png')"
+                ></div>
+                </label>
+               
+                <div class="staff_position">
+                  <strong>Information Security Architect</strong>
+                </div>
+              </div>
+
+              <div class="staff_member">
+                <div>
+                  <input
+            
+                    type="radio"
+                    id="correct_staff"
+                    name="staff_member"
+                    value="4"
+                  />
+                </div>
+                <label for="correct_staff">
+                   <div>Will Griffin</div>
+                <div
+                  class="staff_pic"
+                  style="background-image: url('images/person_4.png')"
+                ></div>
+                </label>
+               
+                <div class="staff_position"><strong>SOC Team Lead</strong></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="text-align: center" class="mt-10">
+          <button class="thm_button staff_chosen">Choose Staff Member</button>
+        </div>
+      </div>
+
+      <div id="level5" style="display: none">
+        <div class="browser">
+          <div class="browser-header">
+            <div class="browser-buttons">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <div class="browser-address-bar">https://firewall.internal</div>
+          </div>
+          <div class="browser-body" style="text-align: center">
+            <div class="flex items-center justify-center">
+              <img src="images/firewall.png" />
+            </div>
+            <div><h2 class="font-bold mb-4">Firewall Block List</h2></div>
+            <div
+              class="panel"
+              style="
+                width: 500px;
+                text-align: left;
+                margin: auto auto 20px auto;
+              "
+            >
+              <div class="panel-heading">Block List</div>
+              <div class="panel-body">
+                <table class="event-log" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <th style="width: 160px">Date</th>
+                    <th>IP Address</th>
+                  </tr>
+                  <tr>
+                    <td>April 2nd 2024, 13:27:00:948</td>
+                    <td>101.34.37.231</td>
+                  </tr>
+                  <tr>
+                    <td>March 30th 2024, 09:12:11:857</td>
+                    <td>212.38.99.12</td>
+                  </tr>
+                  <tr>
+                    <td>March 23rd 2024, 23:56:28:370</td>
+                    <td>213.106.84.35</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            <div class="flex flex-col w-1/2 m-auto gap-2 mb-4">
+              <input
+                class="thm_input"
+                id="ip_blocked_input"
+                placeholder="Enter Block IP Address"
+              />
+            </div>
+          </div>
+          <div class="w-full flex items-center justify-center mt-4">
+            <button class="thm_button ip_blocked">Block IP Address</button>
+          </div>
+        </div>
+      </div>
+      <div id="level6" style="display: none"></div>
+    </div>
+
+    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", { packages: ["corechart", "bar"] });
+      google.charts.setOnLoadCallback(drawCharts);
+    </script>
+    <script>
+      setup();
+    </script>
+  </body>
+</html>

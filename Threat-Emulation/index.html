@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="description"
+      content="TryHackMe is a free online platform for learning cyber security, using hands-on exercises and labs, all through your browser!"
+    />
+    <meta
+      name="og:description"
+      content="TryHackMe is a free online platform for learning cyber security, using hands-on exercises and labs, all through your browser!"
+    />
+    <meta
+      name="keywords"
+      content="cyber,security,cyber security,cyber security training,coding,computer,bitcoin,hacking,hackers,hacks,hack,exploits,keylogger,learn,poc"
+    />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+
+    <meta property="og:site_name" content="TryHackMe" />
+    <meta property="og:title" content="TryHackMe | Cyber Security Training" />
+    <meta
+      property="og:image"
+      content="https://tryhackme.com/img/meta/default.png"
+    />
+    <meta property="og:url" content="https://tryhackme.com" />
+    <meta
+      name="twitter:image"
+      content="https://tryhackme.com/img/meta/default.png"
+    />
+    <meta
+      property="og:description"
+      content="An online platform for learning and teaching cyber security, all through your browser."
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://assets.tryhackme.com/img/favicon.png"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://kit.fontawesome.com/4f572bc49d.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>TryHackMe | Threat Emulation</title>
+  </head>
+
+  <body class="body">
+    <div class="wrapper flex flex-col overflow-hidden">
+      <!-- Header -->
+
+      <!-- moving special=ability question -->
+      <div class="move-div opacity-80">
+        <h4
+          class="h-[70px] w-[70px] border text-sm bg-[#151c2b] flex items-center text-center rounded-full"
+        >
+          Special Ability
+        </h4>
+      </div>
+      <!-- moving special=ability question end -->
+
+      <header
+        class="offical-header relative flex items-center justify-between px-8"
+      >
+        <div class="image-container">
+          <img
+            src="https://assets.tryhackme.com/img/logo/tryhackme_logo_full.svg"
+            alt="image-logo"
+            class="w-full h-16"
+          />
+        </div>
+        <div class="header-content w-full text-center">
+          <h1 class="font-heading heading-main text-white">
+            Introduction to Threat Emulation
+          </h1>
+          <p class="subHeading text-[#a3ea2a]"></p>
+        </div>
+      </header>
+
+      <!-- main-content -->
+      <main
+        class="w-full flex-1 flex flex-col h-full flex flex-col flex-1 special-section"
+      >
+        <div
+          id="main-content"
+          class="flex-1 relative sm:w-[95%] md:w-[80%] lg:w-[60%] m-auto py-4"
+        >
+          <!--  question heading -->
+          <div class="px-2 pb-2 text-center flex justify-center">
+            <h2 class="font-bold text-xl question-title text-white">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Similique.
+            </h2>
+            <div class="text-end mt-3 w-[25px] tracking-[-1px]">
+              <p
+                class="question-count whitespace-nowrap"
+                title="Remaining Questions"
+              >
+                1/3
+              </p>
+            </div>
+          </div>
+
+          <!-- progress-bar/timer -->
+          <div class="flex justify-between items-center gap-10 mb-5">
+            <!-- 1st progress -->
+            <div class="w-full">
+              <h4 class="text-2xl font-bold text-center">AI</h4>
+              <div class="w-full m-auto bg-white rounded h-4 overflow-hidden">
+                <div
+                  class="bg-[#151c2b] h-4 rounded text-center player-2-health border"
+                  style="width: 100%; transition: 1s all"
+                ></div>
+              </div>
+            </div>
+
+            <!-- timer  -->
+            <!-- <div>
+              <span
+                class="flex items-center gap-1 bg-[#151c2b] text-end w-[60px] justify-center m-auto px-10 py-2 opacity-90 rounded"
+              >
+                <i class="fa-solid fa-clock" style="color: #ffffff"></i>
+                <p class="time-second text-xl">30s</p>
+              </span>
+            </div> -->
+            <!-- timer end -->
+
+            <!-- 2nd progress -->
+            <div class="w-full">
+              <h4 class="text-2xl font-bold text-center">Player</h4>
+              <div class="w-full m-auto bg-white rounded h-4 overflow-hidden">
+                <div
+                  class="bg-[#151c2b] h-4 rounded player-1-health border text-center"
+                  style="width: 100%; transition: 1s all"
+                ></div>
+              </div>
+            </div>
+          </div>
+
+          <!--  question heading-end -->
+
+          <!-- hero section -->
+          <div class="hero-section relative">
+            <img
+              src="./images/bg.png"
+              alt="bg-image"
+              class="hero-section__bg rounded"
+            />
+
+            <!-- gif-contaienr -->
+            <div
+              class="gif-container absolute w-full gap-[30px] flex h-full items-end justify-center"
+            >
+              <!-- defender -section -->
+
+              <div class="def-round-1">
+                <div class="gif__defender h-full w-full"></div>
+              </div>
+              <!-- defender -section-end -->
+
+              <!-- attacker-section -->
+              <div class="attack-round-1">
+                <div class="gif__attacker w-full h-full"></div>
+              </div>
+              <!-- attacker-section-end -->
+            </div>
+            <!-- gift-contaienr-end -->
+          </div>
+          <!-- hero section end -->
+
+          <!-- Quiz Section -->
+          <div class="m-auto mt-5">
+            <div class="w-full">
+              <!-- options button container -->
+              <div class="grid grid-cols-2 gap-2 mt-4 quiz-container"></div>
+            </div>
+          </div>
+          <!-- Quiz Section end -->
+        </div>
+      </main>
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.8/lottie.min.js"
+      integrity="sha512-w58XJ/0dVbEfZVJoJyBUOTMGBWmIW4jEYJSA0898d2L0Ghpum0FvwK7qTuHhkTctApzrchv3Neli+28ajI4+fg=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./index.min.js"></script>
+  </body>
+</html>

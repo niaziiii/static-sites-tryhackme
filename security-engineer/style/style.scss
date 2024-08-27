@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&family=Ubuntu");
+
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+$color-main: #212c42;
+$color-secondary: #151c2b;
+$color-btn: #525a6a;
+$color-green-light: #a3ea2a;
+$color-red-light: #eb0037;
+
+body {
+  background-color: $color-main;
+  min-height: 100vh;
+  color: #ececec;
+  font-family: "Source Sans Pro", "Ubuntu", sans-serif !important;
+}
+
+// wraper for header/body
+.wrapper {
+  background-color: $color-main;
+  min-height: 95vh;
+}
+
+// header style
+.offical-header {
+  background-color: $color-secondary;
+  border-bottom: 0.1px solid #ececec7a;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+// default heading style
+.font-heading {
+  font-size: calc(1.325rem + 0.9vw);
+  font-weight: 500;
+  font-family: "Source Sans Pro", "Ubuntu", sans-serif !important;
+}
+
+// button styles & animation
+@import "./modules/btnstyle";
+@import "./modules/animations";
+@import "./modules/tooltip";
+
+// responsivenss for small screens
+@media screen and (max-width: 750px) {
+  .offical-header {
+    padding: 0.5rem 0 !important;
+    justify-content: center;
+    flex-direction: column;
+  }
+}

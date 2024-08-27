@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_3" data-name="Layer 3" xmlns="http://www.w3.org/2000/svg" width="60" height="100" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 60 100">
+  <defs>
+    <linearGradient id="linear-gradient" x1="50.43" y1="102.01" x2="35.02" y2="62.77" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#000"/>
+      <stop offset="1" stop-color="#212c42"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="33.53" y1="32.85" x2="27.79" y2="-7.3" gradientUnits="userSpaceOnUse">
+      <stop offset=".42" stop-color="#d4d8df"/>
+      <stop offset="1" stop-color="#727c92"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="2.11" y1="92.65" x2="57.89" y2="92.65" xlink:href="#linear-gradient-2"/>
+    <linearGradient id="linear-gradient-4" x1="3.51" y1="65.1" x2="1.09" y2="12.32" xlink:href="#linear-gradient-2"/>
+    <linearGradient id="linear-gradient-5" x1="56.12" y1="13.61" x2="57.97" y2="76.8" xlink:href="#linear-gradient-2"/>
+    <linearGradient id="linear-gradient-6" x1="26.67" y1="92" x2="33.33" y2="92" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-7" x1="18.38" y1="6.83" x2="41.62" y2="6.83" xlink:href="#linear-gradient"/>
+  </defs>
+  <g>
+    <path d="m57.89,5.45v89.11c0,2.71-1.95,4.9-4.37,4.9H6.48c-2.42,0-4.37-2.19-4.37-4.9V5.45C2.11,2.74,4.06.55,6.48.55h47.04c2.42,0,4.37,2.19,4.37,4.9Z" style="fill: url(#linear-gradient);"/>
+    <path d="m57.89,5.4v5.93H2.11v-5.93C2.11,2.72,4.07.55,6.48.55h47.05c2.41,0,4.37,2.17,4.37,4.85Z" style="fill: url(#linear-gradient-2);"/>
+    <path d="m57.89,85.86v8.7c0,2.7-1.96,4.89-4.37,4.89H6.48c-2.41,0-4.37-2.19-4.37-4.89v-8.7h55.78Z" style="fill: url(#linear-gradient-3);"/>
+    <g>
+      <rect x="2.11" y="11.33" width="1.41" height="77.34" style="fill: url(#linear-gradient-4);"/>
+      <rect x="56.48" y="11.33" width="1.41" height="77.34" style="fill: url(#linear-gradient-5);"/>
+    </g>
+  </g>
+  <circle cx="30" cy="92" r="3.33" style="fill: url(#linear-gradient-6);"/>
+  <rect x="18.38" y="5.93" width="23.25" height="1.79" style="fill: url(#linear-gradient-7);"/>
+</svg>

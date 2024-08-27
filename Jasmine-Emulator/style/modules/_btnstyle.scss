@@ -1,0 +1,106 @@
+.btn-container {
+  width: 100%;
+  text-align: center;
+  button,
+  input[type="submit"] {
+    cursor: pointer;
+    background-color: $color-btn;
+    margin: auto;
+    padding: 0.5rem;
+    transition: 0.3s all ease-in-out;
+    border-radius: 5px;
+    font-weight: 400;
+    border: none;
+    color: #ececec;
+    font-size: 1.2rem;
+    font-family: "Source Sans Pro", "Ubuntu", sans-serif !important;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    &:hover {
+      background-color: #212c42;
+      border: 1px solid #ececec;
+    }
+
+    &:active {
+      outline: none;
+    }
+  }
+}
+.btn-container-2 {
+  text-align: center;
+
+  button,
+  input[type="submit"] {
+    cursor: pointer;
+    background-color: $color-btn;
+    width: 100%;
+    padding: 0.5rem 0;
+    transition: 0.3s all ease-in-out;
+    border-radius: 10px;
+    font-weight: 400;
+    border: none;
+    color: #ececec;
+    font-size: 1.2rem;
+    font-family: "Source Sans Pro", "Ubuntu", sans-serif !important;
+
+    &:hover {
+      background-color: #212c42;
+      outline: 1px solid #ececec;
+      border: none;
+    }
+
+    &:active {
+      border: none;
+    }
+  }
+}
+
+.input-label {
+  margin-top: 1rem;
+  display: flex;
+  gap: 2px;
+  label {
+    min-width: 2rem;
+  }
+  input[type="text"] {
+    width: 100%;
+    padding: 0.2rem 1rem;
+    border-radius: 5px;
+    border-color: $color-btn !important;
+    background-color: rgb(218, 212, 212);
+    &:focus,
+    &:visited {
+      --tw-ring-color: $color-secondary;
+      border-color: none !important;
+      outline-color: none !important;
+    }
+  }
+}
+
+.check-lists-input-check {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.driver-popover-prev-btn,
+.driver-popover-next-btn,
+.skip-take-tour,
+.yes-take-tour {
+  cursor: pointer !important;
+  background-color: $color-btn !important;
+  font-weight: 100 !important;
+  padding: 0.5rem !important;
+  transition: 0.7s all border !important;
+  border-radius: 5px !important;
+  border: none !important;
+  color: #ececec !important;
+  font-size: 0.8rem !important;
+  height: 2rem;
+  text-shadow: none !important;
+  &:hover {
+    background-color: #212c42 !important;
+  }
+}

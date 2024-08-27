@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&family=Ubuntu");
+
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+$color-main: #212c42;
+$color-secondary: #151c2b;
+$color-btn: #525a6a;
+$color-green-light: #a3ea2a;
+$color-green-dark: rgb(25, 135, 84);
+
+$color-red-light: #eb0037;
+
+body {
+  background-color: $color-main;
+  min-height: 100vh;
+  color: #ececec;
+  font-family: "Source Sans Pro", "Ubuntu", sans-serif !important;
+}
+
+// wraper for header/body
+.wrapper {
+  background-color: $color-main;
+  min-height: 95vh;
+}
+
+#main-content {
+  overflow: auto;
+}
+// header style
+.offical-header {
+  background-color: $color-secondary;
+  border-bottom: 0.1px solid #ececec7a;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+// default heading style
+.font-heading {
+  font-size: calc(1.325rem + 0.9vw);
+  font-weight: 500;
+  font-family: "Source Sans Pro", "Ubuntu", sans-serif !important;
+}
+
+.nextDay__body {
+  scroll-behavior: smooth;
+}
+// custom scrollbar for email showing
+/* width */
+::-webkit-scrollbar {
+  width: 3px; /* Width of the vertical scrollbar */
+  height: 3px; /* Height of the horizontal scrollbar */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.time-theme {
+  color: $color-green-light;
+}
+.presentation {
+  span {
+    b {
+      opacity: 0;
+    }
+  }
+
+  &_one {
+    animation: fadeIn 1s ease-in-out forwards;
+  }
+
+  &_two {
+    animation: fadeIn 1s ease-in-out 1s forwards;
+  }
+
+  &_three {
+    animation: fadeIn 1s ease-in-out 2s forwards;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+// button styles & animation
+@import "./modules/btnstyle";
+@import "./modules/animations";
+@import "./modules/room";
+@import "./modules/slider";
+@import "./modules/tooltip";
+
+// responsivenss for small screens
+@media screen and (max-width: 750px) {
+  .offical-header {
+    padding: 0.5rem 0 !important;
+    justify-content: center;
+    flex-direction: column;
+  }
+}

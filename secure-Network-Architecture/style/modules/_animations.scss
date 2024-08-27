@@ -1,0 +1,107 @@
+// slide botoom animation
+
+.scale-up-center {
+  animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+@-webkit-keyframes scale-up-center {
+  0% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes scale-up-center {
+  0% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+// typing animation
+$slider-name: typing-slider;
+$typing-duration: 4s;
+
+@keyframes typing {
+  from {
+    width: 100%;
+  }
+  90%,
+  to {
+    width: 0;
+  }
+}
+
+.#{$slider-name} {
+  position: relative;
+}
+
+.#{$slider-name} li {
+  animation: slide $typing-duration;
+}
+
+.#{$slider-name} li::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $color-main;
+
+  animation: typing $typing-duration, cursor $typing-duration;
+}
+
+.movement-animations {
+  overflow: hidden !important;
+}
+
+.moving-element {
+  width: 50px;
+  height: 30px;
+  left: -3rem;
+  bottom: 0rem;
+  // opacity: 0 !important;
+  position: absolute;
+  animation: moveTopLeftBottomToRight 3s;
+  animation-delay: 0.5s;
+}
+
+.drop-to-firewall {
+  width: 50px;
+  height: 30px;
+  left: -3rem;
+  bottom: 0rem;
+  position: absolute;
+  animation: moveTopLeftBottom 1.5s;
+  animation-delay: 0.5s;
+}
+
+@keyframes moveTopLeftBottomToRight {
+  0% {
+    left: 1rem;
+    bottom: 0rem;
+  }
+  50% {
+    left: 8rem;
+    bottom: 0%;
+  }
+  100% {
+    left: 8rem;
+    bottom: 7.5rem;
+  }
+}
+@keyframes moveTopLeftBottom {
+  0% {
+    left: 1rem;
+    bottom: 0rem;
+  }
+
+  100% {
+    left: 8rem;
+    bottom: 0%;
+  }
+}

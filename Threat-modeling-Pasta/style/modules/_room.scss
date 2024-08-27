@@ -1,0 +1,70 @@
+.dailouge-box {
+  width: 666px;
+  min-width: 666px;
+  max-width: 666px;
+  margin: auto;
+  background-color: $color-secondary;
+  border-radius: 8px;
+  margin-bottom: 5rem;
+  margin-top: 2rem !important;
+}
+
+.dailouge {
+  //   margin-top: 1rem;
+  &__para {
+    p {
+      font-size: 1.1rem;
+    }
+  }
+  &__container {
+    // width: 0%;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 0.7rem;
+    // white-space: nowrap;
+  }
+  &:nth-of-type(1) {
+    margin-top: 0.5rem !important;
+  }
+}
+
+.lists {
+  padding: 4px 10px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.3rem;
+  margin-left: 1rem;
+  gap: 3px;
+  li {
+    list-style: disc;
+  }
+}
+
+.dailouge-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $color-btn;
+  border: 1px solid $color-green-light;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  min-width: 3rem;
+  max-width: 3rem;
+}
+.dailouge-heading {
+  color: $color-green-light;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+@media only screen and (max-width: 800px) {
+  .dailouge-box {
+    margin-top: 1rem;
+    width: 95% !important;
+    min-width: 95% !important;
+    max-width: 95% !important;
+  }
+}

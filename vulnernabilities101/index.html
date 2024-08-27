@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>TryHackMe | Vulnerabilities Showcase: ACKme IT Services</title>
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.12.0/css/all.css"
+      integrity="sha384-ekOryaXPbeCpWQNxMwSWVvQ0+1VrStoPJq54shlYhR8HzQgig1v5fas6YgOqLoKz"
+      crossorigin="anonymous"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css?v=0.1" />
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="ico/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="ico/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="ico/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="ico/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="ico/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="ico/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="ico/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="ico/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="ico/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="ico/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="ico/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="ico/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="ico/favicon-16x16.png"
+    />
+    <link rel="manifest" href="ico/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="ico/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://kit.fontawesome.com/4f572bc49d.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body class="body bg-[#1c2538]">
+    <!-- Header -->
+    <header class="offical-header px-10 py-3">
+      <div class="image-container">
+        <img
+          src="https://assets.tryhackme.com/img/logo/tryhackme_logo_full.svg"
+          alt="image-logo"
+          class="w-full h-16"
+        />
+      </div>
+      <div class="header-content w-full text-center">
+        <div class="progress-bar">
+          <div
+            style="
+              display: flex;
+              height: 100%;
+              align-items: center;
+              padding-left: 20px;
+              justify-content: center;
+              text-align: center;
+            "
+          >
+            <div>
+              <div class="progress-bar-title text-2xl">
+                Vulnerabilities Showcase: ACKme IT Services
+              </div>
+              <div
+                class="progress-bar-dots flex items-center justify-center gap-1"
+              >
+                <div
+                  data-tooltip="Scenario"
+                  class="tooltip"
+                  id="progress-1"
+                ></div>
+                <div
+                  data-tooltip="Information Gathering"
+                  class="tooltip"
+                  id="progress-2"
+                ></div>
+                <div
+                  data-tooltip="Enumeration & Scanning"
+                  class="tooltip"
+                  id="progress-3"
+                ></div>
+                <div
+                  data-tooltip="Application Testing"
+                  class="tooltip"
+                  id="progress-4"
+                ></div>
+                <div
+                  data-tooltip="Vulnerability Research"
+                  class="tooltip"
+                  id="progress-5"
+                ></div>
+                <div
+                  data-tooltip="Exploitation"
+                  class="tooltip"
+                  id="progress-6"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="mainContainer pt-[10vh]">
+      <div id="level1">
+        <div class="browser">
+          <div class="flex justify-end text-[#a3ea2a] relative">
+            <div class="copy-container relative w-fit -mt-10">
+              <!-- id="copy-btn" -->
+              <i
+                id="info0"
+                data-tooltip=""
+                class="fa fa-info-circle text-3xl mb-6 cursor-pointer hover:scale-105 hover:text-[#a3ea2a]/80"
+                aria-hidden="true"
+              ></i>
+              <div id="tooltip2" class="copy-tooltip -top-8">Info</div>
+            </div>
+          </div>
+          <div class="browser-header">
+            <div class="browser-buttons">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <div class="browser-address-bar" style="color: #b5b5b5">
+              https://email.thepentestingco.thm/user/inbox
+            </div>
+          </div>
+          <div class="browser-body" id="scope-email">
+            <div id="email-header">
+              <div class="email-btn">
+                <i class="fas fa-envelope-open-text"></i>
+              </div>
+              <div class="email-btn"><i class="fas fa-reply"></i></div>
+              <div class="email-btn"><i class="fas fa-reply-all"></i></div>
+            </div>
+            <div id="email-grid">
+              <div id="email-folders">
+                <div class="email-header">Folders</div>
+                <div class="email-folder-main">
+                  <b><i class="fas fa-inbox-in"></i> Inbox (10)</b>
+                </div>
+                <div class="email-folder-sub">
+                  <i class="fas fa-folder"></i> Reports
+                </div>
+                <div class="email-folder-sub">
+                  <i class="fas fa-folder"></i> Training
+                </div>
+                <div class="email-folder-sub">
+                  <i class="fas fa-folder"></i> Support
+                </div>
+                <div class="email-folder-sub">
+                  <i class="fas fa-folder"></i> Junk (13)
+                </div>
+
+                <div class="email-folder-main">
+                  <i class="fas fa-pen"></i> Drafts
+                </div>
+                <div class="email-folder-main">
+                  <i class="fas fa-paper-plane"></i> Sent
+                </div>
+                <div class="email-folder-main">
+                  <i class="fas fa-trash"></i> Trash
+                </div>
+              </div>
+              <div id="email-messages" class="bg-white">
+                <div class="email-header">Messages</div>
+                <div class="email-summary active">
+                  <div class="email-summary-read read">
+                    <i class="fas fa-circle"></i>
+                  </div>
+                  <div>
+                    <div class="email-summary-from">Kyle Hodgson</div>
+                    <div class="email-summary-subject">ACKme IT Services</div>
+                    <div class="email-summary-time">13:32</div>
+                  </div>
+                </div>
+                <div class="email-summary">
+                  <div class="email-summary-read">
+                    <i class="fas fa-circle"></i>
+                  </div>
+                  <div>
+                    <div class="email-summary-from">ThatCloudCompany</div>
+                    <div class="email-summary-subject">
+                      Thank you for signing up!
+                    </div>
+                    <div class="email-summary-time">11:46</div>
+                  </div>
+                </div>
+              </div>
+              <div id="email-body">
+                <div class="email-header">Viewing</div>
+                <div class="email-body-main">
+                  <img class="email-attachment-pdf" src="images/pdf-icon.png" />
+                  <div class=""><b>ACKme IT Services</b></div>
+                  <div class="mb-2">From: Kyle Hodgson</div>
+                  <hr />
+                  <p class="mb-0 mt-2">
+                    Thank you for taking on this engagement. Please document
+                    every step extensively for the new Jr. Penetration tester to
+                    follow. I have attached our company reporting template to
+                    help with this.
+                    <!-- </br></br> -->
+                    As a reminder, ACKme IT Services only want you to test the
+                    IP address <b>240.228.189.136</b>. Any other IP or machine
+                    is out of scope.
+                    <!-- </br></br> -->
+                    Good luck! <br />Joe<br />
+                    Customer Liaison
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="w-full flex items-center justify-center w-[660px] pt-4">
+            <button class="thm_button btn_level1">Next</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="level2" style="display: none">
+        <div class="browser">
+          <div class="flex justify-end text-[#a3ea2a] relative">
+            <div class="copy-container relative w-fit -mt-10">
+              <!-- id="copy-btn" -->
+              <i
+                data-tooltip=""
+                id="info1"
+                class="fa fa-info-circle text-3xl mb-6 cursor-pointer hover:scale-105 hover:text-[#a3ea2a]/80"
+                aria-hidden="true"
+              ></i>
+              <div id="tooltip2" class="copy-tooltip -top-8">Info</div>
+            </div>
+          </div>
+          <div class="browser-header">
+            <div class="browser-buttons">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <div class="browser-address-bar" style="color: #b5b5b5">
+              https://companiesreport.thm/ackme-it-services
+            </div>
+          </div>
+          <div class="browser-body bg-white">
+            <div class="companies-report-heading">
+              <p>
+                <i class="fas fa-book" style="color: #bac7d1"></i> Companies
+                Report
+              </p>
+            </div>
+            <div class="companies-report-container">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="companies-report-info">
+                    <h2 class="mb-3">Company Info</h2>
+                    <p class="mb-0"><b>Established:</b> 2017</p>
+                    <p class="mb-0"><b>Business Type:</b> Corporation</p>
+                    <p class="mb-0"><b>Purpose:</b> IT Support Services</p>
+                    <p class="mb-0"><b>Clients:</b> 800+</p>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <h2>CEO</h2>
+                  <div class="flex items-center justify-center">
+                    <img src="images/person.jpg" width="120" />
+                  </div>
+                  <p>Danny Phantom</p>
+                  <p><i>d.phantom@ackme.thm</i></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center justify-center py-4 w-[660px] m-auto">
+          <button class="thm_button btn_level2">Next</button>
+        </div>
+      </div>
+
+      <div id="level3" style="display: none">
+        <div class="console">
+          <div class="flex justify-end text-[#a3ea2a] relative">
+            <div class="copy-container relative w-fit -mt-10">
+              <!-- id="copy-btn" -->
+              <i
+                data-tooltip=""
+                id="info2"
+                class="fa fa-info-circle text-3xl mb-6 cursor-pointer hover:scale-105 hover:text-[#a3ea2a]/80"
+                aria-hidden="true"
+              ></i>
+              <div id="tooltip2" class="copy-tooltip -top-8">Info</div>
+            </div>
+          </div>
+          <div
+            class="text-center flex bg-white w-full m-auto flex-col p-4 rounded gap-3 mb-4"
+          >
+            <h2 class="text-2xl">Enter IP Address</h2>
+            <input
+              id="ip"
+              class="px-2 py-1 rounded border"
+              placeholder="IP Address"
+            />
+            <input
+              type="button"
+              id="request"
+              class="thm_button"
+              value="Run Nmap Request"
+            />
+          </div>
+          <div class="console-header">
+            <span class="console-button"></span>
+            <span class="console-button"></span>
+            <span class="console-button"></span>
+          </div>
+          <div id="console-body">
+            <span id="console-results"></span>
+            <div id="cli_line">
+              <span class="g">user@thepentestingco</span>:<span class="b"
+                >~</span
+              >$ nmap <span id="ip_addr"></span>
+            </div>
+          </div>
+          <div class="flex items-center justify-center py-4 w-[660px] m-auto">
+            <button class="thm_button btn_level3">Next</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="level4" style="display: none">
+        <div class="browser">
+          <div class="flex justify-end text-[#a3ea2a] relative">
+            <div class="copy-container relative w-fit -mt-10">
+              <!-- id="copy-btn" -->
+              <i
+                data-tooltip=""
+                id="info3"
+                class="fa fa-info-circle text-3xl mb-6 cursor-pointer hover:scale-105 hover:text-[#a3ea2a]/80"
+                aria-hidden="true"
+              ></i>
+              <div id="tooltip2" class="copy-tooltip -top-8">Info</div>
+            </div>
+          </div>
+          <div class="browser-header">
+            <div class="browser-buttons">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <div class="browser-address-bar" style="color: #b5b5b5">
+              https://240.228.189.136
+            </div>
+          </div>
+          <div class="browser-body bg-white">
+            <div class="login-form">
+              <form class="">
+                <h2 class="text-center">ACKme Portal</h2>
+                <p style="text-align: center"><i>Version 1.5.2</i></p>
+                <div class="flex flex-col gap-2 mt-2">
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control rounded w-full px-1"
+                      placeholder="Username"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="password"
+                      class="form-control rounded w-full px-1"
+                      placeholder="Password"
+                    />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <button class="btn btn-primary btn-block">Log in</button>
+                </div>
+                <div class="clearfix">
+                  <label class="float-left form-check-label"
+                    ><input type="checkbox" />Remember me</label
+                  >
+                  <a class="float-right">Forgot Password?</a>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center justify-center py-2 w-[660px] m-auto">
+          <button class="thm_button btn_level4">Next</button>
+        </div>
+      </div>
+
+      <div id="level5" style="display: none">
+        <div class="browser">
+          <div class="flex justify-end text-[#a3ea2a] relative">
+            <div class="copy-container relative w-fit -mt-10">
+              <!-- id="copy-btn" -->
+              <i
+                data-tooltip=""
+                id="info4"
+                class="fa fa-info-circle text-3xl mb-6 cursor-pointer hover:scale-105 hover:text-[#a3ea2a]/80"
+                aria-hidden="true"
+              ></i>
+              <div id="tooltip2" class="copy-tooltip -top-8">Info</div>
+            </div>
+          </div>
+          <div class="browser-header">
+            <div class="browser-buttons">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <div class="browser-address-bar" style="color: #b5b5b5">
+              https://vulnerabilitybank.thm
+            </div>
+          </div>
+          <div class="browser-body bg-white flex items-center justify-center">
+            <div>
+              <div class="vulnerability-bank-heading">
+                <p class="">
+                  <i class="fas fa-bug"></i>
+                  Vulnerability Bank™️
+                </p>
+                <p style="font-size: 16px">
+                  <i>Listing Vulnerabilities since 2001!</i>
+                </p>
+              </div>
+              <div class="vulnerability-bank-container">
+                <div class="row">
+                  <div
+                    class="col-12 w-1/2 relative overflow-hidden rounded m-auto my-4 min-w-[350px]"
+                  >
+                    <input
+                      style="text-align: center"
+                      type="text"
+                      id="vulnbank"
+                      placeholder="Search exploit"
+                      class="w-full p-2 border"
+                    />
+                    <div class="absolute top-[25%] right-[10px] cursor-pointer">
+                      <i class="fas fa-search"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center justify-center pt-4 w-[660px] m-auto">
+            <button class="thm_button btn_level5">Next</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="level6" style="display: none">
+        <div class="console">
+          <div class="flex justify-end text-[#a3ea2a] relative">
+            <div class="copy-container relative w-fit -mt-10">
+              <!-- id="copy-btn" -->
+              <i
+                data-tooltip=""
+                id="info5"
+                class="fa fa-info-circle text-3xl mb-6 cursor-pointer hover:scale-105 hover:text-[#a3ea2a]/80"
+                aria-hidden="true"
+              ></i>
+              <div id="tooltip2" class="copy-tooltip -top-8">Info</div>
+            </div>
+          </div>
+          <div class="console-header">
+            <span class="console-button"></span>
+            <span class="console-button"></span>
+            <span class="console-button"></span>
+          </div>
+          <div id="console-body">
+            <span id="console-results"></span>
+            <!-- <div id="cli_line"><span class="g">Connection received from 10.10.10.10!</span></div>-->
+
+            <div id="cli_line">
+              <span>user@thepentestingco</span>:<span class="b">~</span>$ run
+              exploit -u http://240.228.189.136
+            </div>
+            <div id="cli_line"><span class="g">Running exploit!</span></div>
+            <div id="cli_line">
+              <span class="r">Exploit complete! Launching shell...</span>
+            </div>
+            <div id="cli_line">
+              <span>administrator@ackmeitservices</span>:<span class="b">~</span
+              >$ whoami
+            </div>
+            <p>ACKME\Administrator</p>
+          </div>
+        </div>
+        <div class="flex items-center justify-center pt-4 w-[660px] m-auto">
+          <button class="thm_button flag-show">Show Flag</button>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="script.js?v=0.1"></script>
+    <script>
+      setup();
+    </script>
+  </body>
+</html>

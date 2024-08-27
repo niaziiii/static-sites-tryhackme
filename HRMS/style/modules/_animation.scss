@@ -1,0 +1,70 @@
+// slide botoom animation
+.slide-bottom {
+    -webkit-animation: slide-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    animation: slide-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+  
+  @keyframes slide-bottom {
+    0% {
+      -webkit-transform: translateY(-100px);
+      transform: translateY(-100px);
+    }
+    100% {
+      -webkit-transform: translateY(0px);
+      transform: translateY(0px);
+    }
+  }
+  
+  // typing animation
+  $slider-name: typing-slider;
+  $typing-duration: 4s;
+  
+  @keyframes typing {
+    from {
+      width: 100%;
+    }
+    90%,
+    to {
+      width: 0;
+    }
+  }
+  
+  .#{$slider-name} {
+    position: relative;
+  }
+  
+  .#{$slider-name} li {
+    animation: slide $typing-duration;
+  }
+  
+  .#{$slider-name} li::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $color-main;
+  
+    animation: typing $typing-duration, cursor $typing-duration;
+  }
+
+  .loader {
+    border: 4px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 4px solid $color-main;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+  }
+  
+  /* Safari */
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }

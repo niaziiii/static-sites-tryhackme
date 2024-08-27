@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&family=Ubuntu");
+
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+$color-main: #212c42;
+$color-secondary: #151c2b;
+$color-btn: #525a6a;
+$color-green-light: #a3ea2a;
+$color-red-light: #eb0037;
+$color-blue: #1153e4;
+
+body {
+  background-color: $color-main;
+  min-height: 100vh;
+  color: #ececec;
+  font-family: "Source Sans Pro", "Ubuntu", sans-serif !important;
+}
+
+// header style
+.offical-header {
+  background-color: $color-secondary;
+  border-bottom: 0.1px solid #ececec7a;
+  padding: 1rem 1rem;
+  display: flex;
+  align-items: center;
+}
+
+// default heading style
+.font-heading {
+  font-size: calc(1.325rem + 0.9vw);
+  font-weight: 500;
+  font-family: "Source Sans Pro", "Ubuntu", sans-serif !important;
+}
+
+.highlighted-input {
+  background-color: $color-green-light !important;
+  color: white;
+}
+.highlighted-row {
+  background-color: $color-green-light !important;
+  color: white;
+}
+// button styles & animation
+@import "./modules/btnstyle";
+@import "./modules/tooltip";
+
+#driver-highlighted-element-stage {
+  display: none !important;
+}
+// responsivenss for small screens
+@media screen and (max-width: 750px) {
+  .offical-header {
+    padding: 0.5rem 0 !important;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.stack {
+  div:nth-child(1) {
+    background-color: #719cf9;
+  }
+
+  div:nth-child(2) {
+    background-color: #719cf9;
+  }
+
+  div:nth-child(3) {
+    background-color: #1153e4;
+  }
+
+  div:nth-child(4) {
+    background-color: #673a91;
+  }
+
+  div:nth-child(5) {
+    background-color: #9f00ff;
+  }
+
+  div:nth-child(6) {
+    background-color: #9f00ff;
+  }
+
+  div:nth-child(7) {
+    background-color: #f4f4f4;
+  }
+
+  .item {
+    min-height: 60px;
+    min-width: 180px;
+    border-top: 1px dotted white;
+    border-right: 1px dotted white;
+
+    &.highlighted {
+      outline: 2px solid #3bc81e;
+      border: none;
+    }
+
+    .address {
+      width: 80px;
+      height: 60px;
+      color: #3bc81e;
+      background: #223654;
+      border-right: 1px dotted #a3ea2a;
+    }
+  }
+}

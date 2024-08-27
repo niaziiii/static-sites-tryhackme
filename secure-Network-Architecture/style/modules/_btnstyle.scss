@@ -1,0 +1,91 @@
+.btn-container {
+  width: 100%;
+  text-align: center;
+
+  button,
+  input[type="submit"] {
+    cursor: pointer;
+    background-color: $color-btn;
+    width: 50%;
+    margin: auto;
+    padding: 0.5rem 0;
+    transition: 0.3s all ease-in-out;
+    border-radius: 10px;
+    font-weight: 400;
+    border: 1px solid transparent;
+    color: #ececec;
+    font-size: 1rem;
+    font-family: "Source Sans Pro", "Ubuntu", sans-serif !important;
+
+    &:hover {
+      background-color: #212c42;
+      border: 1px solid #ececec;
+    }
+
+    &:active {
+      outline: none;
+    }
+  }
+}
+
+.btn-container-2 {
+  text-align: center;
+
+  button,
+  input[type="submit"] {
+    cursor: pointer;
+    background-color: $color-btn;
+    width: 100%;
+    transition: 0.3s all ease-in-out;
+    border-radius: 10px;
+    font-weight: 400;
+    border: none;
+    color: #ececec;
+    font-size: 1.2rem;
+    font-family: "Source Sans Pro", "Ubuntu", sans-serif !important;
+
+    &:hover {
+      background-color: #212c42;
+      outline: 1px solid #ececec;
+      border: none;
+    }
+
+    &:active {
+      border: none;
+    }
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .btn-container {
+    button,
+    input[type="submit"] {
+      width: 80%;
+    }
+  }
+}
+
+.button-drag {
+  cursor: move;
+}
+
+.run-not-allowed {
+  cursor: not-allowed !important;
+
+  &:hover {
+    background-color: $color-btn !important;
+    border: 1px solid transparent !important;
+    outline: none !important;
+  }
+}
+.not-auth {
+  border: 1px solid $color-red-light !important;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 0.1rem 0.4rem;
+  p {
+    border-color: transparent !important;
+    border-bottom: none !important;
+    padding-bottom: 0rem !important;
+  }
+}
