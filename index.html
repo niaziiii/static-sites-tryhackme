@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>TryHackMe Showcases | niaziiii</title>
+<style>
+  :root {
+    color-scheme: dark;
+    --bg: #0d1117;
+    --card: #161b22;
+    --border: #30363d;
+    --text: #c9d1d9;
+    --muted: #8b949e;
+    --accent: #58a6ff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    padding: 48px 20px 80px;
+  }
+  .wrap { max-width: 880px; margin: 0 auto; }
+  h1 { font-size: 1.8rem; margin-bottom: 4px; }
+  p.sub { color: var(--muted); margin-top: 0; margin-bottom: 40px; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+  }
+  a.card {
+    display: block;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px 20px;
+    text-decoration: none;
+    color: var(--text);
+    transition: border-color .15s ease, transform .15s ease;
+  }
+  a.card:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+  }
+  a.card .name {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 4px;
+  }
+  a.card .path {
+    color: var(--muted);
+    font-size: .8rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  footer {
+    margin-top: 56px;
+    color: var(--muted);
+    font-size: .85rem;
+  }
+  footer a { color: var(--accent); }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>TryHackMe Showcases</h1>
+    <p class="sub">Static builds of TryHackMe rooms, deployed from a single repo via GitHub Pages.</p>
+    <div class="grid">
+      <a class="card" href="Jasmine-Emulator/">
+        <span class="name">Assembly Emulator</span>
+        <span class="path">/Jasmine-Emulator</span>
+      </a>
+      <a class="card" href="Risk-Management-01/">
+        <span class="name">Risk Management</span>
+        <span class="path">/Risk-Management-01</span>
+      </a>
+      <a class="card" href="Threat-Emulation/">
+        <span class="name">Threat Emulation</span>
+        <span class="path">/Threat-Emulation</span>
+      </a>
+      <a class="card" href="Threat-Modeling/">
+        <span class="name">Threat Modeling &mdash; STRIDE</span>
+        <span class="path">/Threat-Modeling</span>
+      </a>
+      <a class="card" href="Threat-modeling-Pasta/">
+        <span class="name">Threat Modeling &mdash; PASTA</span>
+        <span class="path">/Threat-modeling-Pasta</span>
+      </a>
+      <a class="card" href="junior-sec-analyst/">
+        <span class="name">A Day in the Life of a Junior Security Analyst</span>
+        <span class="path">/junior-sec-analyst</span>
+      </a>
+      <a class="card" href="red-team-fundamentals/">
+        <span class="name">A Simple Red Team Engagement</span>
+        <span class="path">/red-team-fundamentals</span>
+      </a>
+      <a class="card" href="secure-Network-Architecture/">
+        <span class="name">Secure Network Architecture</span>
+        <span class="path">/secure-Network-Architecture</span>
+      </a>
+      <a class="card" href="security-engineer/">
+        <span class="name">Security Engineer</span>
+        <span class="path">/security-engineer</span>
+      </a>
+      <a class="card" href="vulnernabilities101/">
+        <span class="name">Vulnerabilities Showcase: ACKme IT Services</span>
+        <span class="path">/vulnernabilities101</span>
+      </a>
+      <a class="card" href="x86-Assembly/">
+        <span class="name">x86 Assembly</span>
+        <span class="path">/x86-Assembly</span>
+      </a>
+    </div>
+    <footer>
+      Source on <a href="https://github.com/niaziiii/static-sites-tryhackme">GitHub</a>
+    </footer>
+  </div>
+</body>
+</html>
